@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "301de522-6671-41de-8079-7a0d55cb5e4e",
+		"name": "MyOrder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "26825917"
+	},
+	"item": [
+		{
+			"name": "SignIn",
+			"item": [
+				{
+					"name": "SignIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"anas\",\r\n  \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/auth/signIn"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "addOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"customer\": {\r\n    \"id\": 1,\r\n    \"firstName\": \"Anas\",\r\n    \"lastName\": \"A Taleeb\",\r\n    \"bornAt\": \"2002-08-02T00:00:00.000+00:00\"\r\n},\r\n  \"orderedAt\": \"2023-07-04T18:40:30.308Z\",\r\n  \"productOrders\": [\r\n    {\r\n      \"id\": 1,\r\n      \"product\":{\r\n        \"id\": 2,\r\n        \"slug\": \"capy\",\r\n        \"name\": \"Capy\",\r\n        \"reference\": \"Al-Wataniya\",\r\n        \"price\": 5,\r\n        \"vat\": 0.16,\r\n        \"stockable\": true\r\n        },\r\n      \"order\": {\r\n        \"id\": 0,\r\n        \"customer\": {\r\n  \"id\": 2,\r\n  \"firstName\": \"Mahdi\",\r\n  \"lastName\": \"Taleeb\",\r\n  \"bornAt\": \"2004-03-13\"\r\n},\r\n        \"orderedAt\": \"2023-07-04T18:40:30.308Z\",\r\n        \"productOrders\": [\r\n          \"string\"\r\n        ]\r\n      },\r\n      \"quantity\":2,\r\n      \"price\": 13,\r\n      \"vat\": 0.16\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/order"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/order"
+					},
+					"response": []
+				},
+				{
+					"name": "getOrderById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/order/1"
+					},
+					"response": []
+				},
+				{
+					"name": "updateOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"customer\": {\r\n  \"id\": 2,\r\n  \"firstName\": \"Anas\",\r\n  \"lastName\": \"A Taleeb\",\r\n  \"bornAt\": \"2004-03-13\"\r\n},\r\n  \"orderedAt\": \"2023-07-04T18:40:30.308Z\",\r\n  \"productOrders\": [\r\n    {\r\n      \"id\": 1,\r\n      \"product\":{\r\n        \"id\": 2,\r\n        \"slug\": \"capy\",\r\n        \"name\": \"Capy\",\r\n        \"reference\": \"Al-Wataniya\",\r\n        \"price\": 5,\r\n        \"vat\": 0.16,\r\n        \"stockable\": true\r\n        },\r\n      \"order\": {\r\n        \"id\": 0,\r\n        \"customer\": {\r\n  \"id\": 2,\r\n  \"firstName\": \"Mahdi\",\r\n  \"lastName\": \"Taleeb\",\r\n  \"bornAt\": \"2004-03-13\"\r\n},\r\n        \"orderedAt\": \"2023-07-04T18:40:30.308Z\",\r\n        \"productOrders\": [\r\n          \"string\"\r\n        ]\r\n      },\r\n      \"quantity\":2,\r\n      \"price\": 13,\r\n      \"vat\": 0.16\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/order/1"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteOrder",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/order/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "addProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"slug\": \"capy\",\r\n    \"name\": \"Capy\",\r\n    \"reference\": \"Al-Wataniya\",\r\n    \"price\": 5,\r\n    \"vat\": 0.16,\r\n    \"stockable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/product"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/product"
+					},
+					"response": []
+				},
+				{
+					"name": "getProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/product/1"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"slug\": \"coca-cola\",\r\n    \"name\": \"Coca Cola\",\r\n    \"reference\": \"Al-Wataniya\",\r\n    \"price\": 3,\r\n    \"vat\": 0.16,\r\n    \"stockable\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/product/1"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/product/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "addCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 2,\r\n  \"firstName\": \"Mahdi\",\r\n  \"lastName\": \"Taleeb\",\r\n  \"bornAt\": \"2004-03-13\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/customer"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/customer"
+					},
+					"response": []
+				},
+				{
+					"name": "getcustomerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/customer/1"
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"firstName\": \"Anas\",\r\n    \"lastName\": \"A Taleeb\",\r\n    \"bornAt\": \"2002-08-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/customer/1"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/customer/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ProductOrder",
+			"item": [
+				{
+					"name": "addProductOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"product\": {\r\n    \"id\": 1,\r\n    \"slug\": \"coca-cola\",\r\n    \"name\": \"Coca Cola\",\r\n    \"reference\": \"Al-Wataniya\",\r\n    \"price\": 3,\r\n    \"vat\": 0.16,\r\n    \"stockable\": true\r\n},\r\n  \"order\": {\r\n    \"id\": 0,\r\n    \"customer\": {\r\n    \"id\": 1,\r\n    \"firstName\": \"Anas\",\r\n    \"lastName\": \"A Taleeb\",\r\n    \"bornAt\": \"2002-08-02\"\r\n},\r\n    \"orderedAt\": \"2023-07-04T19:15:52.340Z\",\r\n    \"productOrders\": [\r\n      {\r\n        \"id\": 0,\r\n        \"product\":{\r\n    \"id\": 1,\r\n    \"slug\": \"coca-cola\",\r\n    \"name\": \"Coca Cola\",\r\n    \"reference\": \"Al-Wataniya\",\r\n    \"price\": 3,\r\n    \"vat\": 0.16,\r\n    \"stockable\": true\r\n},\r\n        \"order\": \"coca-cola\",\r\n        \"quantity\": 1,\r\n        \"price\": 14,\r\n        \"vat\": 0.16\r\n      }\r\n    ]\r\n  },\r\n  \"quantity\": 23,\r\n  \"price\": 20,\r\n  \"vat\": 0.16\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/productOrder"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllProductOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/productOrder"
+					},
+					"response": []
+				},
+				{
+					"name": "getProductOrderById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/productOrder/1"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 1,\r\n  \"product\": {\r\n    \"id\": 1,\r\n    \"slug\": \"coca-cola\",\r\n    \"name\": \"Coca Cola\",\r\n    \"reference\": \"Al-Wataniya\",\r\n    \"price\": 3,\r\n    \"vat\": 0.16,\r\n    \"stockable\": true\r\n},\r\n  \"order\": {\r\n    \"id\": 0,\r\n    \"customer\": {\r\n    \"id\": 1,\r\n    \"firstName\": \"Anas\",\r\n    \"lastName\": \"A Taleeb\",\r\n    \"bornAt\": \"2002-08-02\"\r\n},\r\n    \"orderedAt\": \"2023-07-04T19:15:52.340Z\",\r\n    \"productOrders\": [\r\n      {\r\n        \"id\": 0,\r\n        \"product\":{\r\n    \"id\": 1,\r\n    \"slug\": \"coca-cola\",\r\n    \"name\": \"Coca Cola\",\r\n    \"reference\": \"Al-Wataniya\",\r\n    \"price\": 5,\r\n    \"vat\": 0.16,\r\n    \"stockable\": true\r\n},\r\n        \"order\": \"coca-cola\",\r\n        \"quantity\": 1,\r\n        \"price\": 14,\r\n        \"vat\": 0.16\r\n      }\r\n    ]\r\n  },\r\n  \"quantity\": 5,\r\n  \"price\": 100,\r\n  \"vat\": 0.16\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/productOrder/1"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/productOrder/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stock",
+			"item": [
+				{
+					"name": "addStock",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"id\": 2,\r\n  \"product\": {\r\n    \"id\": 1,\r\n    \"slug\": \"coca-cola\",\r\n    \"name\": \"Coca Cola\",\r\n    \"reference\": \"Al-Wataniya\",\r\n    \"price\": 3,\r\n    \"vat\": 0.16,\r\n    \"stockable\": true\r\n},\r\n  \"quantity\": 0,\r\n  \"updateAt\": \"2023-07-04T19:00:29.704Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/stock"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllStock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/stock"
+					},
+					"response": []
+				},
+				{
+					"name": "getStockById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/stock/1"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"product\": {\r\n        \"id\": 1,\r\n        \"slug\": \"coca-cola\",\r\n        \"name\": \"Coca Cola\",\r\n        \"reference\": \"Al-Wataniya\",\r\n        \"price\": 3.00,\r\n        \"vat\": 0.16,\r\n        \"stockable\": true\r\n    },\r\n    \"quantity\": 0,\r\n    \"updateAt\": \"2023-07-04\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/stock/1"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/stock/2"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
